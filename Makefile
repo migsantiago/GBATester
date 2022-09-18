@@ -25,15 +25,17 @@ BUILD		:= build
 SOURCES		:= source
 INCLUDES	:= include
 DATA		:=
-MUSIC		:=
+MUSIC		:= maxmod_data
 
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
 ARCH	:=	-mthumb -mthumb-interwork
 
-CFLAGS	:=	-g -Wall -O2\
+CFLAGS	:=	-g -Wall -O3\
 		-mcpu=arm7tdmi -mtune=arm7tdmi\
+		-fomit-frame-pointer\
+		-ffast-math \
 		$(ARCH)
 
 CFLAGS	+=	$(INCLUDE)
